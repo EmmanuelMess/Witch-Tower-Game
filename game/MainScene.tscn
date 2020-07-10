@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://bird/bird.escn" type="PackedScene" id=1]
-[ext_resource path="res://tower/tower.escn" type="PackedScene" id=2]
+[ext_resource path="res://tower/tower.glb" type="PackedScene" id=2]
 
 [node name="Spatial" type="Spatial"]
 
@@ -9,7 +9,7 @@
 transform = Transform( -0.806465, -2.40345e-08, 0.591281, 0.315665, 0.845569, 0.430544, -0.499969, 0.533865, -0.681922, 17.776, 9.78793, -21.5156 )
 
 [node name="tower" parent="." instance=ExtResource( 2 )]
-transform = Transform( 6.18513, 0, 0, 0, 6.18513, 0, 0, 0, 6.18513, 0, 16.5696, 0 )
+transform = Transform( 6.63296, 0, 0, 0, 6.63296, 0, 0, 0, 6.63296, 0, 18.3012, 0 )
 
 [node name="Player" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7894, 23.1876, 50.6046 )
