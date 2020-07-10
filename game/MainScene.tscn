@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://bird/bird.escn" type="PackedScene" id=1]
+[ext_resource path="res://bird/bird.glb" type="PackedScene" id=1]
 [ext_resource path="res://tower/tower.glb" type="PackedScene" id=2]
 [ext_resource path="res://tower/flowera.glb" type="PackedScene" id=3]
 [ext_resource path="res://tower/flowerb.glb" type="PackedScene" id=4]
 [ext_resource path="res://tower/grass.glb" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 34.8595, 1, 49.9531 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 56.0237, 1, 52.8683 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -17,12 +23,12 @@ transform = Transform( 6.63296, 0, 0, 0, 6.63296, 0, 0, 0, 6.63296, 0, 18.3012, 
 [node name="Player" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7894, 23.1876, 50.6046 )
 
+[node name="bird" parent="Player" instance=ExtResource( 1 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.90735e-06, -0.899876, -1.73942 )
+
 [node name="ClippedCamera" type="ClippedCamera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0.991229, 0.132153, 0, -0.132153, 0.991229, 0, 0, 0 )
 far = 10000.0
-
-[node name="bird" parent="Player" instance=ExtResource( 1 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, -0.971849, -1.837 )
 
 [node name="FlowerA" type="Node" parent="."]
 
@@ -145,3 +151,47 @@ transform = Transform( 1, 0, 0, 0, 0.794891, -0.606752, 0, 0.606752, 0.794891, 0
 
 [node name="grass2" parent="Node" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 0.794891, -0.606752, 0, 0.606752, 0.794891, 0, 10.5342, 18.102 )
+
+[node name="InvisibleWall" type="Spatial" parent="."]
+
+[node name="StaticBody" type="StaticBody" parent="InvisibleWall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.9183, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody"]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0, 1, -4, 35, 0.196 )
+shape = SubResource( 1 )
+
+[node name="StaticBody2" type="StaticBody" parent="InvisibleWall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0818, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody2"]
+transform = Transform( -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0, 1, -4, 35, 0.196 )
+shape = SubResource( 1 )
+
+[node name="StaticBody3" type="StaticBody" parent="InvisibleWall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11958, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody3"]
+transform = Transform( 2.86611e-09, -0.017592, -0.999845, -1, -1.62921e-07, 0, -1.62895e-07, 0.999845, -0.017592, -4, 35, 48.4256 )
+shape = SubResource( 1 )
+
+[node name="StaticBody4" type="StaticBody" parent="InvisibleWall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11958, 0, -97.9127 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody4"]
+transform = Transform( 2.86611e-09, -0.017592, -0.999845, -1, -1.62921e-07, 0, -1.62895e-07, 0.999845, -0.017592, -4, 35, 48.4256 )
+shape = SubResource( 1 )
+
+[node name="StaticBody5" type="StaticBody" parent="InvisibleWall"]
+transform = Transform( 1, 0, 0, 0, 0.00829013, 0.999966, 0, -0.999966, 0.00829013, 5.11958, 20.2848, 19.2246 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody5"]
+transform = Transform( 2.86611e-09, -0.017592, -0.999845, -1, -1.62981e-07, 1.16415e-10, -1.62981e-07, 0.999846, -0.017592, -4, 22.7831, 46.1398 )
+shape = SubResource( 2 )
+
+[node name="StaticBody6" type="StaticBody" parent="InvisibleWall"]
+transform = Transform( 1, 0, 0, 0, 0.00829013, 0.999966, 0, -0.999966, 0.00829013, 5.11958, -46.5051, 19.2246 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody6"]
+transform = Transform( 2.86611e-09, -0.017592, -0.999845, -1, -1.62981e-07, 1.16415e-10, -1.62981e-07, 0.999846, -0.017592, -4, 22.7831, 46.1398 )
+shape = SubResource( 2 )
