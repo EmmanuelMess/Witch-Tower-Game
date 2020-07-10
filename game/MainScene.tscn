@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://bird/bird.escn" type="PackedScene" id=1]
 [ext_resource path="res://tower/tower.glb" type="PackedScene" id=2]
+[ext_resource path="res://tower/flowera.glb" type="PackedScene" id=3]
+[ext_resource path="res://tower/flowerb.glb" type="PackedScene" id=4]
+[ext_resource path="res://tower/grass.glb" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 
@@ -20,3 +23,125 @@ far = 10000.0
 
 [node name="bird" parent="Player" instance=ExtResource( 1 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, -0.971849, -1.837 )
+
+[node name="FlowerA" type="Node" parent="."]
+
+[node name="flowera" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, 2.36804, 8.88645, 18.7053 )
+
+[node name="flowera2" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -7.43075, 8.88645, 17.3834 )
+
+[node name="flowera8" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -12.1739, 9.44031, 13.7122 )
+
+[node name="FlowerGroup" type="Node" parent="FlowerA"]
+
+[node name="flowera3" parent="FlowerA/FlowerGroup" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -9.3775, 11.062, 13.3871 )
+
+[node name="flowera4" parent="FlowerA/FlowerGroup" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33481, 0.270308, 0, -0.270308, 1.33481, -8.73747, 11.062, 13.3871 )
+
+[node name="flowera5" parent="FlowerA/FlowerGroup" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -9.21578, 11.062, 12.5765 )
+
+[node name="FlowerGroup2" type="Node" parent="FlowerA"]
+
+[node name="flowera6" parent="FlowerA/FlowerGroup2" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -4.79936, 12.0269, 13.3701 )
+
+[node name="flowera7" parent="FlowerA/FlowerGroup2" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -4.42735, 12.2612, 13.3701 )
+
+[node name="Node" type="Node" parent="FlowerA"]
+
+[node name="flowera11" parent="FlowerA/Node" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -14.9274, 11.7175, 5.44021 )
+
+[node name="flowera10" parent="FlowerA/Node" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33481, 0.270308, 0, -0.270308, 1.33481, -14.2874, 11.7175, 5.44021 )
+
+[node name="flowera9" parent="FlowerA/Node" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -14.7657, 11.7175, 4.62968 )
+
+[node name="Node2" type="Node" parent="FlowerA"]
+
+[node name="flowera14" parent="FlowerA/Node2" instance=ExtResource( 3 )]
+transform = Transform( 1.23746, -0.558022, 0.109935, 0.568749, 1.21412, -0.239191, 0, 0.263246, 1.33622, -21.8897, 2.70297, 1.13595 )
+
+[node name="flowera13" parent="FlowerA/Node2" instance=ExtResource( 3 )]
+transform = Transform( 1.23746, -0.557433, -0.112884, 0.568749, 1.21284, 0.245609, 0, -0.270308, 1.33481, -21.3082, 2.97026, 1.13595 )
+
+[node name="flowera12" parent="FlowerA/Node2" instance=ExtResource( 3 )]
+transform = Transform( 1.23746, -0.558022, 0.109935, 0.568749, 1.21412, -0.239191, 0, 0.263246, 1.33622, -21.7428, 2.77051, 0.325422 )
+
+[node name="flowera3" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( -1.35386, -0.0285674, -0.145006, 0, 1.33622, -0.263246, 0.147793, -0.261691, -1.32833, -4.38395, 8.88645, -18.3379 )
+
+[node name="flowera4" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( -1.35386, -0.0285674, -0.145006, 0, 1.33622, -0.263246, 0.147793, -0.261691, -1.32833, 5.50043, 8.88645, -18.0871 )
+
+[node name="flowera9" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( -1.35386, -0.0285674, -0.145006, 0, 1.33622, -0.263246, 0.147793, -0.261691, -1.32833, 10.614, 9.44031, -14.9523 )
+
+[node name="FlowerGroup3" type="Spatial" parent="FlowerA"]
+transform = Transform( 0.128121, 0, 0.991759, 0, 1, 0, -0.991759, 0, 0.128121, 0, 0, 0 )
+
+[node name="flowera3" parent="FlowerA/FlowerGroup3" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -9.3775, 11.062, 13.3871 )
+
+[node name="flowera4" parent="FlowerA/FlowerGroup3" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33481, 0.270308, 0, -0.270308, 1.33481, -8.73747, 11.062, 13.3871 )
+
+[node name="flowera5" parent="FlowerA/FlowerGroup3" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -9.21578, 11.062, 12.5765 )
+
+[node name="FlowerGroup4" type="Spatial" parent="FlowerA"]
+transform = Transform( 0.678455, 0, 0.734642, 0, 1, 0, -0.734642, 0, 0.678455, 0, 0, 0 )
+
+[node name="flowera6" parent="FlowerA/FlowerGroup4" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -4.79936, 12.0269, 13.3701 )
+
+[node name="flowera7" parent="FlowerA/FlowerGroup4" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -4.42735, 12.2612, 13.3701 )
+
+[node name="Node3" type="Spatial" parent="FlowerA"]
+transform = Transform( -0.761369, 0, 0.648319, 0, 1, 0, -0.648319, 0, -0.761369, 0, 0, 0 )
+
+[node name="flowera11" parent="FlowerA/Node3" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -14.9274, 11.7175, 5.44021 )
+
+[node name="flowera10" parent="FlowerA/Node3" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33481, 0.270308, 0, -0.270308, 1.33481, -14.2874, 11.7175, 5.44021 )
+
+[node name="flowera9" parent="FlowerA/Node3" instance=ExtResource( 3 )]
+transform = Transform( 1.3619, 0, 0, 0, 1.33622, -0.263246, 0, 0.263246, 1.33622, -14.7657, 11.7175, 4.62968 )
+
+[node name="Node4" type="Spatial" parent="FlowerA"]
+transform = Transform( -0.99998, 0, -0.00633526, 0, 1, 0, 0.00633526, 0, -0.99998, 0, 0, 0 )
+
+[node name="flowera14" parent="FlowerA/Node4" instance=ExtResource( 3 )]
+transform = Transform( 1.23746, -0.558022, 0.109935, 0.568749, 1.21412, -0.239191, 0, 0.263246, 1.33622, -21.8897, 2.70297, 1.13595 )
+
+[node name="flowera13" parent="FlowerA/Node4" instance=ExtResource( 3 )]
+transform = Transform( 1.23746, -0.557433, -0.112884, 0.568749, 1.21284, 0.245609, 0, -0.270308, 1.33481, -21.3082, 2.97026, 1.13595 )
+
+[node name="flowera12" parent="FlowerA" instance=ExtResource( 3 )]
+transform = Transform( -1.23744, 0.556343, -0.118398, 0.568749, 1.21412, -0.239191, 0.00783962, -0.266776, -1.3355, 21.7403, 2.77051, -0.463162 )
+
+[node name="FlowerB" type="Node" parent="."]
+
+[node name="flowerb" parent="FlowerB" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.774978, -0.631989, 0, 0.631989, 0.774978, 0, 5.29354, 21.4437 )
+
+[node name="flowerb2" parent="FlowerB" instance=ExtResource( 4 )]
+transform = Transform( -0.138378, -0.625909, -0.767522, 0, 0.774978, -0.631989, 0.990379, -0.0874534, -0.10724, -21.2374, 5.29354, -2.96734 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="grass" parent="Node" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.794891, -0.606752, 0, 0.606752, 0.794891, 0, 6.65741, 20.6279 )
+
+[node name="grass2" parent="Node" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.794891, -0.606752, 0, 0.606752, 0.794891, 0, 10.5342, 18.102 )
