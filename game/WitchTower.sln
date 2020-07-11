@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WitchTower", "WitchTower.csproj", "{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	Release|Any CPU = Release|Any CPU
+	Tools|Any CPU = Tools|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{7CD1C3DA-9AFF-49FB-9B9A-7D4FAB8350DA}.Tools|Any CPU.Build.0 = Tools|Any CPU
+	EndGlobalSection
+EndGlobal

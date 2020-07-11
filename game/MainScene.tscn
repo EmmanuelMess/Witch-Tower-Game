@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://bird/bird.glb" type="PackedScene" id=1]
 [ext_resource path="res://tower/tower.glb" type="PackedScene" id=2]
 [ext_resource path="res://tower/flowera.glb" type="PackedScene" id=3]
 [ext_resource path="res://tower/flowerb.glb" type="PackedScene" id=4]
 [ext_resource path="res://tower/grass.glb" type="PackedScene" id=5]
+[ext_resource path="res://Player.gd" type="Script" id=6]
+[ext_resource path="res://analog/analog.tscn" type="PackedScene" id=7]
+[ext_resource path="res://button/FlapButtonPressed.png" type="Texture" id=8]
+[ext_resource path="res://button/FlapButton.png" type="Texture" id=9]
+
+[sub_resource type="PhysicsMaterial" id=3]
+
+[sub_resource type="ConcavePolygonShape" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 34.8595, 1, 49.9531 )
@@ -14,14 +22,36 @@ extents = Vector3( 56.0237, 1, 52.8683 )
 
 [node name="Spatial" type="Spatial"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Analog" parent="CanvasLayer" instance=ExtResource( 7 )]
+position = Vector2( 175, 550 )
+listenerNodePath = "/root/Spatial/Player"
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+position = Vector2( 1105, 550 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/Node2D"]
+position = Vector2( -64, -64 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 8 )
+action = "ui_press"
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.806465, -2.40345e-08, 0.591281, 0.315665, 0.845569, 0.430544, -0.499969, 0.533865, -0.681922, 17.776, 9.78793, -21.5156 )
 
-[node name="tower" parent="." instance=ExtResource( 2 )]
+[node name="StaticBody" type="StaticBody" parent="."]
 transform = Transform( 6.63296, 0, 0, 0, 6.63296, 0, 0, 0, 6.63296, 0, 18.3012, 0 )
+physics_material_override = SubResource( 3 )
+
+[node name="tower" parent="StaticBody" instance=ExtResource( 2 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 4 )
 
 [node name="Player" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7894, 23.1876, 50.6046 )
+transform = Transform( 1, 0, 0, 0, 0.908362, -0.418184, 0, 0.418184, 0.908362, -12.7894, 23.1876, 50.6046 )
+script = ExtResource( 6 )
 
 [node name="bird" parent="Player" instance=ExtResource( 1 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.90735e-06, -0.899876, -1.73942 )
@@ -195,3 +225,4 @@ transform = Transform( 1, 0, 0, 0, 0.00829013, 0.999966, 0, -0.999966, 0.0082901
 [node name="CollisionShape" type="CollisionShape" parent="InvisibleWall/StaticBody6"]
 transform = Transform( 2.86611e-09, -0.017592, -0.999845, -1, -1.62981e-07, 1.16415e-10, -1.62981e-07, 0.999846, -0.017592, -4, 22.7831, 46.1398 )
 shape = SubResource( 2 )
+[connection signal="pressed" from="CanvasLayer/Node2D/TouchScreenButton" to="Player" method="_on_TouchScreenButton_pressed"]
